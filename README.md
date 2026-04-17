@@ -93,8 +93,7 @@ h3 ping h1   # Should fail
 ### Throughput Test
 
 ```bash
-h2 iperf -s
-h1 iperf -c 10.0.0.2
+iperf h1 h2
 ```
 
 ---
