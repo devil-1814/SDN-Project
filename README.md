@@ -1,14 +1,20 @@
-# SDN-Project
 # SDN-Based Access Control System
+
+<p align="center">
+  <b>Secure Network Communication using Software Defined Networking (SDN)</b><br>
+  Built with Ryu Controller, Mininet, and Python 3.10
+</p>
+
+---
 
 ## Overview
 
 This project implements an **SDN-based access control system** using the Ryu controller and Mininet.
-The system ensures that **only authorized hosts can communicate**, while unauthorized hosts are blocked dynamically using OpenFlow rules.
+It ensures that **only authorized hosts can communicate**, while unauthorized hosts are blocked dynamically using OpenFlow rules.
 
 ---
 
-## Objectives
+##  Objectives
 
 * Allow communication only between trusted hosts
 * Block unauthorized access
@@ -19,19 +25,20 @@ The system ensures that **only authorized hosts can communicate**, while unautho
 
 ## Architecture
 
-* **Controller:** Ryu
+* **Controller:** Ryu (Python-based SDN controller)
+* **Programming Language:** Python 3.10
 * **Switch:** OpenFlow-enabled switch
 * **Emulator:** Mininet
-* **Hosts:**
 
-  * h1 → 10.0.0.1 (Authorized)
-  * h2 → 10.0.0.2 (Authorized)
-  * h3 → 10.0.0.3 (Unauthorized)
+### Hosts:
+
+* h1 → 10.0.0.1 (Authorized)
+* h2 → 10.0.0.2 (Authorized)
+* h3 → 10.0.0.3 (Unauthorized)
 
 ---
 
 ##  Features
-
 * Whitelist-based access control
 * Dynamic flow rule installation
 * ARP handling for connectivity
@@ -40,7 +47,7 @@ The system ensures that **only authorized hosts can communicate**, while unautho
 
 ---
 
-##  Project Structure
+## Project Structure
 
 ```
 sdn_project/
@@ -51,7 +58,7 @@ sdn_project/
 
 ---
 
-##  Setup & Installation
+## Setup & Installation
 
 ### 1. Install Dependencies
 
@@ -81,16 +88,16 @@ sudo mn --custom topo.py --topo mytopo --controller remote
 
 ##  Testing
 
-###  Connectivity Test
+### Connectivity Test
 
 ```bash
-h1 ping h2   # Should work
-h3 ping h1   # Should fail
+h1 ping h2   # Allowed
+h3 ping h1   # Blocked
 ```
 
 ---
 
-### Throughput Test
+###  Throughput Test
 
 ```bash
 iperf h1 h2
@@ -98,7 +105,7 @@ iperf h1 h2
 
 ---
 
-###  Latency Test
+### Latency Test
 
 ```bash
 h1 ping h2
@@ -109,18 +116,18 @@ h1 ping h2
 ## 📈 Results
 
 | Test       | Result           |
-| ---------- | -----------------|
-| h1 → h2    |  Allowed         |
-| h3 → h1    |  Blocked         |
+| ---------- | ---------------- |
+| h1 → h2    | Allowed          |
+| h3 → h1    | Blocked          |
 | Throughput | High (~900 Mbps) |
 | Latency    | Low (~0.1 ms)    |
 
 ---
 
-##  Working Principle
+## 🔄 Working Principle
 
 1. Packet arrives at switch
-2. Switch sends packet to controller
+2. Switch forwards packet to controller
 3. Controller checks whitelist
 4. Decision:
 
@@ -130,7 +137,7 @@ h1 ping h2
 
 ---
 
-##  Access Control Logic
+## Access Control Logic
 
 * ARP traffic → Always allowed
 * Authorized IP → Forward
@@ -138,7 +145,7 @@ h1 ping h2
 
 ---
 
-##  Performance Evaluation
+## Performance Evaluation
 
 * Throughput measured using `iperf`
 * Latency measured using `ping`
@@ -146,17 +153,25 @@ h1 ping h2
 
 ---
 
-##  Conclusion
+## Conclusion
 
-The project successfully demonstrates **secure access control using SDN**.
+This project demonstrates **secure access control using SDN principles**.
 Only authorized hosts can communicate, and unauthorized traffic is effectively blocked.
 
 ---
 
+## Future Enhancements
 
-##  Author
+* GUI dashboard
+* AI-based intrusion detection
+* Multi-switch topology
+* Role-based access control
 
-Adarsh Krishna Naik
-SRN: PES2UG24AM011
+---
+
+## Author
+
+**Adarsh Naik**
+SRN:PES2UG24AM011
 
 ---
