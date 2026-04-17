@@ -113,7 +113,7 @@ h1 ping h2
 
 ---
 
-## 📈 Results
+## Results
 
 | Test       | Result           |
 | ---------- | ---------------- |
@@ -124,7 +124,7 @@ h1 ping h2
 
 ---
 
-## 🔄 Working Principle
+##  Working Principle
 
 1. Packet arrives at switch
 2. Switch forwards packet to controller
