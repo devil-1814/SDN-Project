@@ -156,7 +156,7 @@ Only authorized hosts can communicate, and unauthorized traffic is effectively b
 
 ##  Author
 
-*Adarsh Krishna Naik
-*SRN: PES2UG24AM011
+Adarsh Krishna Naik
+SRN: PES2UG24AM011
 
 ---
